@@ -47,15 +47,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
       body: ListView(
         children: <Widget>[
           image_slider_carousel,
-          _menuBox(context),
+          _menuBoxs(context),
         ],
       ),
     );
   }
 }
 
-
-Widget _onPressedBtn1(BuildContext context) {
+// OnTapHome
+Widget _onTapHome(BuildContext context) {
   return Container(
     height: 100.0,
     child: InkWell(
@@ -65,32 +65,45 @@ Widget _onPressedBtn1(BuildContext context) {
                 context,
                 MaterialPageRoute(builder: (context) => SplashScreen()),
               );
-
-                        },
-
+              },
         ),
   );
-
 }
 
-Widget _menuBox(BuildContext context) {
+// OnTapProdut
+Widget _onTapProdut(BuildContext context) {
+  return Container(
+    height: 100.0,
+    child: InkWell(
+      onTap: () {
+        print('you taped product button');
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => SplashScreen()),
+        );
+      },
+    ),
+  );
+}
+
+
+Widget _menuBoxs(BuildContext context) {
   return SingleChildScrollView(
     padding: const EdgeInsets.all(16.0),
     child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         const SizedBox(height: 00.0),
         Row(
           children: <Widget>[
             Expanded(
-
               child: Column(
-
-
                 children: <Widget>[
                   Container(
                     height: 190,
                     color: Colors.blue,
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         ListTile(
                           title: Text(
@@ -100,13 +113,11 @@ Widget _menuBox(BuildContext context) {
                               color: Colors.white,
                               fontSize: 24.0,
                             ),
-
                           ),
-
-
-
                         ),
-                        _onPressedBtn1(context),
+
+                        // onTap HOME to switch screen
+                        _onTapHome(context),
 
 
                       ],
@@ -205,30 +216,34 @@ Widget _menuBox(BuildContext context) {
                   const SizedBox(height: 10.0),
                   Container(
                     height: 190,
-                    color: Colors.yellow,
+                    color: Colors.amber,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         ListTile(
                           title: Text(
-                            "Product",
+                            'Designs',
                             style:
-                                Theme.of(context).textTheme.display1.copyWith(
-                                      fontSize: 24.0,
-                                      color: Colors.black,
-                                    ),
+                            Theme.of(context).textTheme.display1.copyWith(
+                              color: Colors.white,
+                              fontSize: 24.0,
+                            ),
                           ),
                           trailing: Icon(
                             FontAwesomeIcons.chair,
-                            color: Colors.black,
+                            color: Colors.white,
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 16.0),
                           child: Text(
-                            'many',
+                            'Norway',
                           ),
-                        )
+                        ),
+
+
+                        // onTap HOME to switch screen
+                        _onTapProdut(context),
                       ],
                     ),
                   ),

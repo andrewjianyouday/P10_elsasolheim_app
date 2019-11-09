@@ -1,9 +1,9 @@
 import 'package:elsasolheim/screens/splashscreen.dart';
-import 'package:elsasolheim/screens/splashscreen3.dart';
+
 
 import 'package:flutter/material.dart';
-import 'package:elsasolheim/screens/homescreen.dart';
-import 'package:elsasolheim/screens/dashboardscreen.dart';
+
+
 
 void main() => runApp(MyApp());
 
