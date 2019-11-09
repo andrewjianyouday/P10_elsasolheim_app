@@ -1,3 +1,4 @@
+import 'package:elsasolheim/screens/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:responsive_container/responsive_container.dart';
@@ -53,51 +54,91 @@ class _DashboardScreenState extends State<DashboardScreen> {
   }
 }
 
+
+Widget _onPressedBtn1(BuildContext context) {
+  return Container(
+    height: 100.0,
+    child: InkWell(
+            onTap: (){
+              print('hahah');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SplashScreen()),
+              );
+
+                        },
+
+        ),
+  );
+
+}
+
 Widget _menuBox(BuildContext context) {
   return SingleChildScrollView(
     padding: const EdgeInsets.all(16.0),
     child: Column(
       children: <Widget>[
-        const SizedBox(height: 50.0),
+        const SizedBox(height: 00.0),
         Row(
           children: <Widget>[
             Expanded(
+
               child: Column(
+
+
                 children: <Widget>[
                   Container(
                     height: 190,
                     color: Colors.blue,
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         ListTile(
                           title: Text(
-                            "Home",
+                            'Home',
                             style:
-                                Theme.of(context).textTheme.display1.copyWith(
-                                      color: Colors.white,
-                                      fontSize: 24.0,
-                                    ),
+                            Theme.of(context).textTheme.display1.copyWith(
+                              color: Colors.white,
+                              fontSize: 24.0,
+                            ),
+
                           ),
-                          trailing: Icon(
-                            FontAwesomeIcons.home,
-                            color: Colors.white,
-                          ),
+
+
+
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 16.0),
-                          child: Text(
-                            'Norway',
-                          ),
-                        )
+                        _onPressedBtn1(context),
+
+
                       ],
                     ),
+
+//                    child: InkWell(
+//                      highlightColor: Colors.redAccent,
+//                      splashColor: Colors.yellow,
+//                      onLongPress: (){
+//                        print('hahah');
+//                        Navigator.push(
+//                          context,
+//                          MaterialPageRoute(builder: (context) => SplashScreen()),
+//                        );
+//
+//                      },
+//                      child: Text('Go back!'),
+//
+//
+//
+//
+//                    ),
+
+
                   ),
                   const SizedBox(height: 10.0),
                   Container(
+
                     height: 120,
                     color: Colors.green,
                     child: Column(
+
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         ListTile(
@@ -119,9 +160,11 @@ Widget _menuBox(BuildContext context) {
                           child: Text(
                             'google map',
                           ),
+
                         )
                       ],
                     ),
+
                   ),
                 ],
               ),
